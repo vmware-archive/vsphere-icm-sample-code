@@ -1,0 +1,39 @@
+{
+  "__version": "1.1",
+  "__comments": "Sample template to deploy a vCenter Server with an embedded Platform Services Controller to an ESXi host.",
+  "target.vcsa": {
+    "appliance": {
+      "deployment.network": "VM Network",
+      "deployment.option": "small",
+      "name": "vCenter-Server-Appliance",
+      "thin.disk.mode": true
+    },
+    "esx": {
+      "hostname": "<ESXi host name or IP address>",
+      "username": "root",
+      "password": "<Password of the ESXi host root user>",
+      "datastore": "<ESXi host datastore>"
+    },
+    "network": {
+      "hostname": "<Host name>",
+      "dns.servers": [
+        "<DNS Server IP Address>",
+        "<Alternate DNS Server IP Address>"
+      ],
+      "gateway": "<Gateway IP address>",
+      "ip": "<Static IP address>",
+      "ip.family": "ipv4",
+      "mode": "static",
+      "prefix": "<The value must be 0-32>"
+    },
+    "os": {
+      "password": "<vCenter Server Appliance root password>",
+      "ssh.enable": true
+    },
+    "sso": {
+      "password": "<vCenter Single Sign-On password>",
+      "domain-name": "vsphere.local",
+      "site-name": "<SSO site name>"
+    }
+  }
+}
